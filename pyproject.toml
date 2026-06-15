@@ -10,6 +10,9 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["pyyaml>=6.0", "uri2pact", "uri2run", "uri2verify"]
 
+[project.optional-dependencies]
+voice = ["uri2voice", "nl2uri"]
+
 [project.scripts]
 touri = "touri.cli:main"
 
@@ -23,9 +26,11 @@ packages = ["touri", "touri.backends", "touri.loaders", "touri_examples", "touri
 touri = ["schemas/*.json"]
 
 [tool.uv.sources]
-uri2pact = { git = "https://github.com/tellmesh/uri2pact.git" }
-uri2run = { git = "https://github.com/tellmesh/uri2run.git" }
-uri2verify = { git = "https://github.com/tellmesh/uri2verify.git" }
+uri2pact = { path = "../uri2pact", editable = true }
+uri2run = { path = "../uri2run", editable = true }
+uri2verify = { path = "../uri2verify", editable = true }
+uri2voice = { path = "../uri2voice", editable = true }
+nl2uri = { path = "../nl2uri", editable = true }
 
 [tool.pfix]
 # Self-healing Python configuration
