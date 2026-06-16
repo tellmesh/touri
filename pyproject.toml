@@ -11,6 +11,11 @@ requires-python = ">=3.10"
 dependencies = ["pyyaml>=6.0", "uri2pact", "uri2run", "uri2verify"]
 
 [project.optional-dependencies]
+dev = ["pytest>=7.0",
+    "goal>=2.1.0",
+    "costs>=0.1.20",
+    "pfix>=0.1.60",
+]
 voice = ["uri2voice", "nl2uri"]
 
 [project.scripts]
