@@ -39,10 +39,28 @@ backend:
 Run:
 
 ```bash
-pip install -e packages/touri
+pip install -e .
 touri validate examples/20_touri_capabilities/weather_forecast.uri.capability.yaml
 touri list examples/20_touri_capabilities
 touri call weather://forecast/Gdansk/14/html --registry examples/20_touri_capabilities
 ```
 
-`touri` does not replace `uri3`, `uri2flow`, `uri2ops`, or hypervisor. It is the generic capability layer used when a URI should be backed by an existing function, shell script, HTTP service, Docker action, MCP tool, A2A skill, flow, or graph.
+## Role in the system
+
+```text
+URI -> capability manifest -> uri2run backend -> ServiceResult
+touri does not replace uri3, uri2flow, uri2ops, or hypervisor.
+```
+
+## Examples
+
+| Example | Path |
+|---------|------|
+| Capabilities | [`examples/20_touri_capabilities`](examples/20_touri_capabilities) (symlink → tellmesh) |
+| Voice | [`tellmesh/examples/21_touri_voice`](../tellmesh/examples/21_touri_voice) |
+
+## Links
+
+- [TODO](TODO.md)
+- [uri2run](../uri2run) · [uri2voice](../uri2voice) · [uri2pact](../uri2pact)
+- Org status: [`../TODO_STATUS.md`](../TODO_STATUS.md)
